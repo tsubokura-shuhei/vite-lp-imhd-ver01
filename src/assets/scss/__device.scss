@@ -1,0 +1,30 @@
+@use "sass:math";
+
+@mixin pc($pc: 1080px) {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tablet($tablet: 1079px) {
+  @media (max-width: ($tablet)) and (min-width: 751px) {
+    @content;
+  }
+}
+
+@mixin sp($sp: 750px) {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+$device-width--pc: 1400;
+$device-width--sp: 750;
+
+@function vw-pc($px-vw) {
+  @return math.div($px-vw, $device-width--pc) * 100vw;
+}
+
+@function vw-sp($px-vw) {
+  @return math.div($px-vw, $device-width--sp) * 100vw;
+}
