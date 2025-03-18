@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && html-beautify src/dist/**/*.html",
+    "build": "vite build",
     "minify-html": "html-minifier --collapse-whitespace --remove-comments --minify-js true --minify-css true --remove-optional-tags --ignore-custom-comments dist/index.html",
     "preview": "vite preview"
   },
